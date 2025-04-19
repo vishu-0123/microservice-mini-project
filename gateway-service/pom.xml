@@ -8,10 +8,10 @@
 		<version>3.2.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.epam.demo</groupId>
-	<artifactId>employee</artifactId>
+	<groupId>com.example</groupId>
+	<artifactId>gateway-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>employee</name>
+	<name>gateway-service</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -43,22 +43,23 @@
 	</dependencyManagement>
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-web</artifactId>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-openfeign</artifactId>
+			<artifactId>spring-cloud-starter-gateway</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-		</dependency>
+
 	</dependencies>
 
 	<build>
