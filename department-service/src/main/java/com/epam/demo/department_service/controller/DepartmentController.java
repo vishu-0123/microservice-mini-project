@@ -2,6 +2,7 @@ package com.epam.demo.department_service.controller;
 
 
 import com.epam.demo.department_service.dto.EmployeeDto;
+import com.epam.demo.department_service.entity.Department;
 import com.epam.demo.department_service.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,5 +22,9 @@ public class DepartmentController {
     @GetMapping("/{deptCode}")
     public List<EmployeeDto> getEmployeeByDeptCode(@PathVariable String deptCode){
         return departmentService.getEmployeesInDepartment(deptCode);
+    }
+    @GetMapping("/specific/{deptCode}")
+    public Department getDepartmentByDeptCode(@PathVariable String deptCode){
+        return departmentService.getDepartmentByDeptCode(deptCode);
     }
 }

@@ -20,7 +20,7 @@ public class EmployeeController {
 
     @GetMapping("/{id}")
     public APIResponseDto getEmployeeDetails(@PathVariable int id){
-        return employeeService.getEmployeeWithDepartmentCode(id);
+        return employeeService.empWithDeptInfo(id);
     }
 
     @GetMapping("/employees/department/{deptCode}")

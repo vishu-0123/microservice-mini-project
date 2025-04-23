@@ -5,7 +5,9 @@ import com.epam.demo.employee.dto.APIResponseDto;
 import com.epam.demo.employee.dto.DepartmentDto;
 import com.epam.demo.employee.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.HashMap;
 import java.util.List;
@@ -23,7 +25,17 @@ public class EmployeeService {
         }
 
         public Employee getEmployeeById(int id){
-            return employeeMap.get(id);
+            if (employeeMap.containsKey(id)) {
+                return employeeMap.get(id);
+            }
+
+            else {
+                throw new ResponseStatusException(
+                        HttpStatus.NOT_FOUND,
+                        "Employee with ID " + id + " not found"
+                );
+            }
+
         }
 
         @Autowired
@@ -33,6 +45,12 @@ public class EmployeeService {
 
             DepartmentDto department = departmentClient.getDepartmentByCode(employee.getDepartmentCode());
             return new APIResponseDto(employee,department);
+        }
+
+        public APIResponseDto empWithDeptInfo(int id){
+            Employee employee = getEmployeeById(id);
+            DepartmentDto departmentDto=departmentClient.getDeptInfo(employee.getDepartmentCode());
+            return new APIResponseDto(employee,departmentDto);
         }
 
     public List<Employee> getEmployeesByDepartmentCode(String deptCode) {
