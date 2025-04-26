@@ -1,25 +1,15 @@
-package com.epam.demo.employee.entity;
+package com.epam.organization_service.dto;
 
-public class Employee {
+public class EmployeeDtoOfOrg {
 
     private int empId;
     private String empName;
     private String departmentCode;
-    private String orgCode;
 
-    public Employee(String empName, int empId, String departmentCode,String orgCode) {
+    public EmployeeDtoOfOrg(String empName, int empId, String departmentCode) {
         this.empName = empName;
         this.empId = empId;
         this.departmentCode = departmentCode;
-        this.orgCode=orgCode;
-    }
-
-    public String getOrgCode() {
-        return orgCode;
-    }
-
-    public void setOrgCode(String orgCode) {
-        this.orgCode = orgCode;
     }
 
     public int getEmpId() {
@@ -45,4 +35,6 @@ public class Employee {
     public void setDepartmentCode(String departmentCode) {
         this.departmentCode = departmentCode;
     }
+
+
 }

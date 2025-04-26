@@ -6,10 +6,20 @@ public class APIResponseDto {
 
     private Employee employee;
     private DepartmentDto departmentDto;
+    private OrganizationDto organizationDto;
 
-    public APIResponseDto(Employee employee, DepartmentDto departmentDto) {
+    public APIResponseDto(Employee employee, DepartmentDto departmentDto,OrganizationDto organizationDto) {
         this.employee = employee;
         this.departmentDto = departmentDto;
+        this.organizationDto=organizationDto;
+    }
+
+    public OrganizationDto getOrganizationDto() {
+        return organizationDto;
+    }
+
+    public void setOrganizationDto(OrganizationDto organizationDto) {
+        this.organizationDto = organizationDto;
     }
 
     public Employee getEmployee() {

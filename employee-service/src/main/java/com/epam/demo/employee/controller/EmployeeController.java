@@ -20,11 +20,17 @@ public class EmployeeController {
 
     @GetMapping("/{id}")
     public APIResponseDto getEmployeeDetails(@PathVariable int id){
+        System.out.println("Inside emp controller "+ id);
         return employeeService.empWithDeptInfo(id);
     }
 
     @GetMapping("/employees/department/{deptCode}")
     public List<Employee> getEmployeesByDepartmentCode(@PathVariable String deptCode){
     return employeeService.getEmployeesByDepartmentCode(deptCode);
+    }
+
+    @GetMapping("/org/{orgCode}")
+    public List<Employee> getEmpByOrgCode(@PathVariable String orgCode){
+        return employeeService.getEmployeeByorgCode(orgCode);
     }
 }
