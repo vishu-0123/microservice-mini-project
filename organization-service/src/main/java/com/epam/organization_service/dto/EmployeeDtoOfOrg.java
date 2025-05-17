@@ -1,0 +1,40 @@
+package com.epam.organization_service.dto;
+
+public class EmployeeDtoOfOrg {
+
+    private int empId;
+    private String empName;
+    private String departmentCode;
+
+    public EmployeeDtoOfOrg(String empName, int empId, String departmentCode) {
+        this.empName = empName;
+        this.empId = empId;
+        this.departmentCode = departmentCode;
+    }
+
+    public int getEmpId() {
+        return empId;
+    }
+
+    public void setEmpId(int empId) {
+        this.empId = empId;
+    }
+
+    public String getEmpName() {
+        return empName;
+    }
+
+    public void setEmpName(String empName) {
+        this.empName = empName;
+    }
+
+    public String getDepartmentCode() {
+        return departmentCode;
+    }
+
+    public void setDepartmentCode(String departmentCode) {
+        this.departmentCode = departmentCode;
+    }
+
+
+}
